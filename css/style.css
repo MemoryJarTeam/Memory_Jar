@@ -1,0 +1,13 @@
+@import "./reset.css";
+@import "./variable.css";
+
+/* Components */
+/* @import './components/modal.css'; */
+
+/* Pages */
+@import "./pages/intro.css";
+@import "./pages/memoryWriting.css"; 
+
+/* body {
+    font-family: 
+} */
