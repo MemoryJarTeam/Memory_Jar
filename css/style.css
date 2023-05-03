@@ -4,6 +4,9 @@
 /* Components */
 /* @import './components/modal.css'; */
 
+/* Pages */
+@import "./pages/intro.css"; 
+
 /* body {
     font-family: 
 } */
