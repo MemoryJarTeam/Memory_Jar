@@ -1,0 +1,98 @@
+.logIn{
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #ffffdc;
+}
+
+@media (min-width: 300px) {
+   .logIn section{
+      width: 80vw;
+      padding: 5vh 0vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 3vh;
+   }
+   
+   .logIn img{
+      width: 20vh;
+   }
+
+   .logIn figure{
+      display: flex;
+      justify-content: center;
+   }
+   
+   .logIn form{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 2vh;
+   }
+
+   .logIn aside{
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   
+   .logIn aside{
+      row-gap: 3vh;
+   }
+   
+   .logIn input{
+      height: 5vh;
+      border: none;
+      font-size: 18px;
+   }
+   
+   .logIn aside > input{
+      width: 100%;
+      padding: 0vh 3vh;
+   }
+   
+   .logIn form > input{
+      width: 35%;
+      background-color: whitesmoke;
+      border-radius: 10px;
+      transition: .5s;
+   }
+   
+   .logIn form > input:hover{
+      background-color: #aacb73;
+      cursor: pointer;
+   }
+
+   .logIn label{
+      width: 100%;
+      font-size: 20px;
+   }
+}
+
+@media (min-width: 700px) {
+   .signUp img{
+      width: 50%;
+   }
+
+   .logIn input{
+      font-size: 28px;
+   }
+}
+
+@media (min-width: 1000px) {
+   .logIn section{
+      width: 40vw;
+   }
+
+   .logIn input{
+      height: 6vh;
+      font-size: 18px;
+   }
+}
