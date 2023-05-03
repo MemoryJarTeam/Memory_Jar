@@ -1,7 +1,9 @@
-/* splash page css */
 @media (min-width: 300px) {
-    .splash {
+    /* splash page css */
+    .splash,
+    .intro {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         /* width: 100%; */
@@ -47,17 +49,100 @@
         }
     }
 
-    
+    /* intro page css */
+    .intro {
+        row-gap: 8vh;
+    }
+
+    .intro img {
+        width: 40vw;
+    }
+
+    .intro figure {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5vh;
+        align-items: center;
+    }
+
+    .intro h1 {
+        font-size: 30px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: white;
+        /* -webkit-text-stroke: 1px black; */
+        text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+    }
+
+    .intro article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 5vh;
+    }
+
+    .logInBtn {
+        background-color: transparent;
+        border: 2px solid var(--btnColor);
+        border-radius: 20px;
+        padding: 5%;
+        width: 50vw;
+    }
+
+    .logInBtn:hover {
+        background-color: var(--btnColor);
+    }
+
+    .signUpBtn {
+        background-color: var(--btnColor);
+        border: 2px solid transparent;
+        border-radius: 20px;
+        padding: 5%;
+        width: 50vw;
+    }
+
+    .signUpBtn:hover {
+        background-color: transparent;
+        border: 2px solid var(--btnColor);
+
+    }
 }
 
 @media (min-width: 700px) {
-    .splash img{
+    /* splash page */
+    .splash img {
+        width: 40vw;
+    }
+
+    /* intro page */
+    .intro img {
+        width: 35vw;
+    }
+
+    .intro h1 {
+        font-size: 40px;
+    }
+
+    .logInBtn, .signUpBtn {
+        font-size: 18px;
         width: 40vw;
     }
 }
 
 @media (min-width: 1000px) {
-    .splash img{
+    /* splash page */
+    .splash img {
         width: 25vw;
+    }
+
+    /* intro page */
+    .intro img {
+        width: 20vw;
+    }
+
+    .logInBtn, .signUpBtn {
+        font-size: 18px;
+        width: 30vw;
     }
 }
