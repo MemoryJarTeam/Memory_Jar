@@ -1,0 +1,32 @@
+@media (min-width: 300px) {
+    footer {
+        background-color: #ecd4ff;
+        height: 6vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        position: fixed;
+        z-index: 10;
+        bottom: 0;
+    }
+
+    footer button {
+        color: #d2e89a;
+        background-color: ghostwhite;
+        width: 5vh;
+        height: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 5px;
+    }
+
+    footer > section {
+        display: flex;
+        width: 70%;
+        justify-content: space-around;
+    }
+}

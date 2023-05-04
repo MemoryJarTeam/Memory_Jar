@@ -4,6 +4,7 @@
 /* Components */
 @import "./components/modal.css";
 @import "./components/hamburger.css";
+@import "./components/footer.css";
 
 /* Pages */
 /* @import "./pages/intro.css"; */
