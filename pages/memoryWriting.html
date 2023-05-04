@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="../asset/image/favicon.ico" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <title>Memory Jar</title>
+    </head>
+    <body>
+        <section class="memoryWriting">
+            <nav class="backBtn">
+                <img
+                    src="../asset/image/icon/icon-arrow-left.svg"
+                    alt="arrow-left-icon"
+                    onclick="history.back()"
+                />
+            </nav>
+            <main>
+                <section class="modalBox">
+                    <h3 id="todayDate"></h3>
+                    <form
+                        method="post"
+                        enctype="multipart/form-data"
+                        class="memoryInputBox"
+                    >
+                        <aside>
+                            <p>Keyword Title</p>
+                            <input
+                                type="text"
+                                maxlength="20"
+                                placeholder="Summarize your memory in 20 letters!"
+                            />
+                        </aside>
+                        <aside>
+                            <p>Choose your memory color!</p>
+                            <section class="colorBox">
+                                <img
+                                    src="../asset/image/icon/heart-regular.svg"
+                                    alt="empty-heart"
+                                />
+                                <article class="colorBtn">
+                                    <button></button>
+                                    <button></button>
+                                    <button></button>
+                                    <button></button>
+                                </article>
+                                <img
+                                    src="../asset/image/icon/heart-solid.svg"
+                                    alt="full-heart"
+                                />
+                            </section>
+                        </aside>
+                        <aside>
+                            <textarea placeholder="Write your memory"></textarea>
+                            <label
+                                for="updateMemoryImg"
+                                class="updateMemoryImg"
+                            >
+                                <img
+                                    src="../asset/image/icon/icon-img-button.svg"
+                                    alt="upload-img"
+                                />
+                            </label>
+                            <input
+                                onchange="imageUpload(event)"
+                                id="updateMemoryImg"
+                                type="file"
+                                accept="image/*"
+                            />
+                        </aside>
+                        <aside>
+                            <input type="submit" value="Add" />
+                        </aside>
+                    </form>
+                    <article class="uploadImgScreen"></article>
+                </section>
+            </main>
+        </section>
+        <script src="../script/memoryWriting.js" defer></script>
+    </body>
+</html>
