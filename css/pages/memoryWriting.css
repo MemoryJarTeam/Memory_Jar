@@ -15,7 +15,7 @@
 
     .memoryWriting .backBtn {
         display: flex;
-        padding: 2% 4%;
+        padding: 4%;
     }
 
     .backBtn > img:hover {
