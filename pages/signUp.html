@@ -9,10 +9,14 @@
 </head>
 <body class="logIn">
    <section>
-      <figure>
-            <img src="../asset/image/user.png" alt="User Pic">
-         </figure>
       <form>
+         <figure class="userPic">
+            <img src="../asset/image/user.png" alt="User Pic">
+            <label for="userPic">
+               <img src="../asset/image/image.png" alt="Image Icon">
+            </label>
+            <input type="file" accept="image/*" name="userPic" id="userPic">
+         </figure>
          <aside>
             <input type="text" name="name" id="name" placeholder="User Name">
             <input type="email" name="email" id="email" placeholder="User Email">

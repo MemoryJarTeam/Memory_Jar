@@ -16,14 +16,43 @@
       align-items: center;
       row-gap: 3vh;
    }
+
+   #userPic{
+      display: none;
+   }
    
-   .logIn img{
+   .logIn figure > img{
       width: 20vh;
    }
 
    .logIn figure{
-      display: flex;
+      /* display: flex; */
       justify-content: center;
+   }
+
+   .userPic{
+      width: 20vh;
+      height: 20vh;
+      position: relative;
+   }
+
+   .userPic img{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+   }
+   
+   .userPic label > img{
+      padding: 1vh;
+      border-radius: 12px;
+      width: 4vh;
+      background-color: wheat;
+      transition: .5s;
+   }
+
+   .userPic label > img:hover{
+      cursor: pointer;
+      background-color: #aacb73;
    }
    
    .logIn form{
