@@ -1,0 +1,22 @@
+@media (min-width: 300px) {
+    .backBtn {
+        display: flex;
+        padding: 4%;
+    }
+
+    .backBtn > img:hover {
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 700px) {
+    .backBtn {
+        padding: 3%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .backBtn {
+        padding: 2%;
+    }
+}

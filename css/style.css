@@ -4,10 +4,20 @@
 
 /* Components */
 @import "./components/footer.css";
+@import "./components/backBtn.css";
 @import "./components/hamburger.css";
 @import "./components/modal.css";
 
+
 /* Pages */
+@import "./pages/memoryWriting.css";
+@import "./pages/addJar.css";
+@import "./pages/addJarModal.css";
 @import "./pages/keyword.css";
 @import "./pages/memory.css";
 @import "./pages/nojar.css";
+
+/* body {
+    font-family: 
+} */
+
