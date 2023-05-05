@@ -5,11 +5,13 @@
 @import "./components/modal.css";
 @import "./components/hamburger.css";
 @import "./components/footer.css";
+@import "./components/backBtn.css";
 
 /* Pages */
 /* @import "./pages/intro.css"; */
 @import "./pages/memoryWriting.css";
 @import "./pages/addJar.css";
+@import "./pages/addJarModal.css";
 
 /* body {
     font-family: 
