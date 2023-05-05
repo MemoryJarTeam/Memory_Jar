@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p {
+    text-align: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    padding-top: 5vh;
+    padding: 3vh;
+    width: 95%;
+}
+
+main {
+    padding-bottom: 5vh;
+}
+
+
+
+/* MOBILE VERSION */
+@media (min-width: 300px) {
+
+
+    /* keyword-main */
+    .keyword-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        row-gap: 5vh;
+    }
+
+    .keyword-main > article button {
+        border: none;
+        background-color: #FDF7C3;
+        padding: 1vh;
+        gap: 1vh;
+    }
+    
+    .calendar {
+        background-color: gainsboro;
+        border: none;
+        padding: 1vh;
+        width: 12vh;
+    }
+
+    .keyword {
+        background-color: #D2E89A;
+        border: none;
+        padding: 1vh;
+        width: 12vh;
+    }
+
+    .keyword-main > article {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2vh;
+    }
+
+    .keyword-main > section{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-end;
+        row-gap: 1vh;
+    }
+
+}
+
+/* TABLET VERSION */
+@media (min-width: 700px) {
+
+}
+
+/* DESKTOP VERSION */
+@media (min-width: 1000px) {
+
+
+}
+
