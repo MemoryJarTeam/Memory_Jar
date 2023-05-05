@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p {
+    text-align: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    padding-top: 5vh;
+    padding: 3vh;
+    width: 95%;
+}
+
+main {
+    display: flex;
+    padding-bottom: 5vh;
+}
+
+/* MOBILE VERSION */
+@media (min-width: 300px) {
+    /* no jar main */
+    .nojar {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 3vh;
+        padding: 3vh;
+    }
+
+    .nojar button {
+        border: none;
+        background-color: #D2E89A;
+        padding: 1vh;
+        border-radius: 5px;
+    }
+
+    /* result-keyword-memory main */
+    .memory-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+
+    .memory-main > section {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1vh;
+        width: 90%;
+        align-items: flex-end;
+    }
+
+    .memory-main > article button {
+        border: none;
+        background-color: #FDF7C3;
+        padding: 1vh;
+        gap: 1vh;
+    }
+
+    .calendar {
+        background-color: gainsboro;
+        border: none;
+        padding: 1%;
+        width: 12vh;
+    }
+
+    .keyword {
+        background-color: #D2E89A;
+        border: none;
+        padding: 1%;
+        width: 12vh;
+    }
+
+}
+
+/* TABLET VERSION */
+@media (min-width: 700px) {
+
+    p {
+        font-size: 24px;
+    }
+
+    .nojar button {
+        padding: 1vh;
+        font-size: 20px;
+    }
+
+    footer i {
+        font-size: 18px;
+    }
+}
+
+/* DESKTOP VERSION */
+@media (min-width: 1000px) {
+
+
+}
+
+
+

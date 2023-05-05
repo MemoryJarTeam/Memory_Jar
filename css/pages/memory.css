@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p {
+    text-align: center;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    padding-top: 5vh;
+    padding: 3vh;
+    width: 95%;
+}
+
+main {
+    padding-bottom: 5vh;
+}
+
+/* MOBILE VERSION */
+@media (min-width: 300px) {
+
+    /* result-keyword-memory main */
+    .memory-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        row-gap: 3vh;
+    }
+
+    .memory-main > article {
+        padding-top: 5%;
+        row-gap: 3vh;
+    }
+
+    .memory-main section {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .memory-main button {
+        border: none;
+        background-color: #FDF7C3;
+        padding: 1vh;
+    }
+
+    .memory-main small {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40vh;
+        height: 4vh;
+        background-color: ghostwhite;
+    }
+    
+    .memory-main aside,
+    .memory-main aside small,
+    .memory-main aside img {
+        width: 100%;
+    }
+
+    .memory-main aside p {
+        background-color: ghostwhite;
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2%;
+    }
+
+    .memory-main span img {
+        width: 3vh;
+        border-radius: 10vh;
+    }
+
+    .memory-main span {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 1vh;
+        align-items: center;
+    }
+    
+
+}
+
+/* TABLET VERSION */
+@media (min-width: 700px) {
+
+}
+
+/* DESKTOP VERSION */
+@media (min-width: 1000px) {
+
+    .modalBox {
+        width: 30%;
+        row-gap: 10vh;
+    }
+
+    .memory-main p {
+        font-size: 18px;
+    }
+
+    .memory-main > article {
+        padding-top: 3%;
+    }
+
+
+}
+
+
