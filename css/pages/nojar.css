@@ -1,81 +1,51 @@
-/* MOBILE VERSION */
 @media (min-width: 300px) {
-    /* no jar main */
-    .nojar {
-        flex-direction: column;
-        align-items: center;
-        row-gap: 3vh;
-        padding: 3vh;
-    }
-
-    .nojar button {
-        border: none;
-        background-color: #D2E89A;
-        padding: 1vh;
-        border-radius: 5px;
-    }
-
-    /* result-keyword-memory main */
-    .nojar .memory-main {
+    .addJar main {
         display: flex;
         flex-direction: column;
+        row-gap: 5vh;
         align-items: center;
-        width: 90%;
+        text-align: center;
+        padding-top: 30vh;
     }
 
-    .nojar .memory-main > section {
+    .addJar > main > section {
         display: flex;
         flex-direction: column;
-        row-gap: 1vh;
-        width: 90%;
-        align-items: flex-end;
+        row-gap: 2vh;
     }
 
-    .nojar.memory-main > article button {
-        border: none;
-        background-color: #FDF7C3;
-        padding: 1vh;
-        gap: 1vh;
+    .addJar h3 {
+        font-size: 20px;
+        font-weight: 700;
     }
 
-    .nojar .calendar {
-        background-color: gainsboro;
-        border: none;
-        padding: 1%;
-        width: 12vh;
+    .addJar > main > button {
+        border: 2px solid var(--btnColor);
+        background-color: var(--btnColor);
+        padding: 3%;
     }
 
-    .nojar .keyword {
-        background-color: #D2E89A;
-        border: none;
-        padding: 1%;
-        width: 12vh;
+    .addJar > main > button:hover {
+        background-color: var(--hoverColor);
     }
-
 }
 
-/* TABLET VERSION */
 @media (min-width: 700px) {
-
-    .nojar p {
-        font-size: 24px;
+    .addJar h3 {
+        font-size: 22px;
     }
 
-    .nojar button {
-        padding: 1vh;
+    .addJar h4 {
         font-size: 20px;
     }
 
-    .nojar footer i {
-        font-size: 18px;
+    .addJar > main > button {
+        padding: 2%;
     }
 }
 
-/* DESKTOP VERSION */
 @media (min-width: 1000px) {
-
-
+    .addJar > main > button {
+        padding: 1%;
+    }
 }
-
-
-
