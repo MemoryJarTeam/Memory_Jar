@@ -1,50 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory</title>
-    <link rel="stylesheet" href="../css/style.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-    <header>
-        <nav>
-            <i class="fa-solid fa-arrow-left"></i></li>
-        </nav>
-    </header>
-    <main class="memory-main">
-        <article class="modalBox">
-            <section>
-                <i class="fa-solid fa-arrow-left"></i>
-                <p> Date: 2023.05.30.Tue</p>
-                <i class="fa-solid fa-arrow-right"></i>
-            </section>
-            <aside>
-                <small>
-                    Summer Vacation
-                </small>
-                <img src="../asset/image/memory.jpg" alt="memory">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse corrupti officia minus dolorum, recusandae facilis autem error optio dolorem odit?
-                </p>
-            </aside>
-            <span>by.
-                <img src="../asset/image/profile.jpg" alt="profile">
-                Day
-            </span>
-        </article>
-    </main>
-    <footer>
-        <section>
-            <button class="icon">
-                <i class="fa-solid fa-house-chimney"></i>
-            </button>
-            <button class="icon">
-                <i class="fa-solid fa-user"></i>
-            </button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Memory</title>
+        <link rel="stylesheet" href="../css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <section class="memory">
+            <nav class="backBtn">
+                <img
+                    src="../asset/image/icon/icon-arrow-left.svg"
+                    alt="arrow-left-icon"
+                    onclick="history.back()"
+                />
+            </nav>
+            <main class="memory-main">
+                <article class="modalBox">
+                    <section>
+                        <button class="fa-solid fa-arrow-left"></button>
+                        <p>Date : 2023.05.30.Tue</p>
+                        <button class="fa-solid fa-arrow-right"></button>
+                    </section>
+                    <aside>
+                        <small> Summer Vacation </small>
+                        <img src="../asset/image/memory.jpg" alt="memory" />
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Esse corrupti officia minus dolorum,
+                            recusandae facilis autem error optio dolorem odit?
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Esse corrupti officia minus dolorum,
+                            recusandae facilis autem error optio dolorem odit?
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Esse corrupti officia minus dolorum,
+                            recusandae facilis autem error optio dolorem odit?
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Esse corrupti officia minus dolorum,
+                            recusandae facilis autem error optio dolorem odit?
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Esse corrupti officia minus dolorum,
+                            recusandae facilis autem error optio dolorem odit?
+                        </p>
+                    </aside>
+                    <span
+                        >by.
+                        <img src="../asset/image/profile.jpg" alt="profile" />
+                        Day
+                    </span>
+                </article>
+            </main>
+            <footer>
+                <section>
+                    <button class="icon">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </button>
+                    <button class="icon">
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                </section>
+            </footer>
         </section>
-    </footer>
-</body>
+    </body>
 </html>
