@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Lato"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        />
+        <link rel="shortcut icon" href="../asset/image/favicon.ico" />
+        <script
+            src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="../css/style.css" />
+        <title>Memory Jar</title>
+    </head>
+    <body>
+        <!-- We have to refresh the page to see the responisve web site! -->
+        <section class="calendar">
+            <nav class="backBtn">
+                <img
+                    src="../asset/image/icon/icon-arrow-left.svg"
+                    alt="arrow-left-icon"
+                    onclick="history.back()"
+                />
+            </nav>
+            <main class="calendar-main">
+                <h3>Jar Name</h3>
+                <section>
+                    <button class="calendarBtn">Calendar</button>
+                    <button class="keywordBtn">Key word</button>
+                </section>
+                <article>
+                    <div id="calendar">
+                        <div id="calendar_header">
+                            <i class="fa-solid fa-chevron-left"></i>
+                            <h1></h1>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <div id="calendar_weekdays"></div>
+                        <div id="calendar_content"></div>
+                    </div>
+                </article>
+            </main>
+            <!-- <footer>
+                <section>
+                    <button>
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </button>
+                    <button>
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                </section>
+            </footer> -->
+        </section>
+        <script src="../script/calendar.js" defer></script>
+    </body>
+</html>
