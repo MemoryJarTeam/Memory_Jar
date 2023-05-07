@@ -1,15 +1,20 @@
 @media (min-width: 300px) {
     footer {
-        background-color: #ecd4ff;
+        background-color: var(--mainColor);
         height: 6vh;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
+        justify-content: flex-end;
+        align-items: center;
         width: 100%;
         position: fixed;
         z-index: 10;
         bottom: 0;
+    }
+
+    footer > section {
+        display: flex;
+        width: 70%;
+        justify-content: space-around;
     }
 
     footer button {
@@ -23,10 +28,16 @@
         border: none;
         border-radius: 5px;
     }
+}
 
-    footer > section {
-        display: flex;
-        width: 70%;
-        justify-content: space-around;
+@media (min-width: 700px) {
+    footer button {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 1000px) {
+    footer button {
+        font-size: 16px;
     }
 }
