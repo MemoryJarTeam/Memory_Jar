@@ -14,7 +14,11 @@
 @import "./pages/keyword.css";
 @import "./pages/calendar.css";
 @import "./pages/memory.css";
-@import "./pages/noJar.css";
+@import "./pages/nojar.css";
+@import "./pages/noJarDay.css";
+@import "./pages/jarExist.css";
+
+
 
 /* body {
     font-family: 

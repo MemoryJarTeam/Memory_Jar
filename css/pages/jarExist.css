@@ -1,0 +1,79 @@
+
+@media (min-width: 300px) {
+    .jarexist {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .jarexist-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 3vh;
+        padding-top: 10%;
+    }
+
+    .jarexist-main p {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .jarexist-main > article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .jarexist-main button {
+        width: 6vh;
+        height: 6vh;
+        background-color: var(--btnColor);
+        border: none;
+    }
+    
+    .jarexist-main > section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .jarexist-main img {
+        width: 90%;
+    }
+
+}
+
+@media (min-width: 700px) {
+
+
+    .jarexist-main button {
+        width: 6vh;
+        height: 6vh;
+        font-size: 24px;
+    }
+
+    .jarexist-main p {
+        font-size: 28px;
+    }
+
+    .jarexist-main img {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .jarexist-main {
+        padding-top: 5%;
+    }
+
+    .jarexist-main img {
+        width: 70%;
+    }
+
+    .jarexist-main p {
+        font-size: 20px;
+    }
+
+}
