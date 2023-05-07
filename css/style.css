@@ -7,7 +7,10 @@
 @import "./components/hamburger.css";
 @import "./components/modal.css";
 
+
 /* Pages */
+@import "./pages/intro.css"; 
+@import "./pages/logIn.css";
 @import "./pages/memoryWriting.css";
 @import "./pages/addJar.css";
 @import "./pages/addJarModal.css";
@@ -17,6 +20,7 @@
 @import "./pages/nojar.css";
 @import "./pages/noJarDay.css";
 @import "./pages/jarExist.css";
+
 
 
 
