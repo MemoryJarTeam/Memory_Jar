@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="../asset/image/favicon.ico" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <title>Memory Jar</title>
+    </head>
+    <body>
+        <section class="addJarModal">
+            <nav class="backBtn">
+                <img
+                    src="../asset/image/icon/icon-arrow-left.svg"
+                    alt="arrow-left-icon"
+                    onclick="history.back()"
+                />
+            </nav>
+            <main>
+                <section class="modalBox">
+                    <form method="post" class="JarInputBox">
+                        <aside>
+                            <p>Jar Name</p>
+                            <input
+                                type="text"
+                                maxlength="20"
+                                placeholder="Put a name on the Jar!"
+                            />
+                        </aside>
+                        <aside>
+                            <p>Opening Date</p>
+                            <input
+                                type="number"
+                                max="365"
+                                placeholder="Put amount of days to open the jar"
+                            />
+                        </aside>
+                        <aside>
+                            <p>Choose the Color of the Jar</p>
+                            <input type="color" />
+                        </aside>
+                        <aside>
+                            <input type="submit" value="Create a Jar" />
+                        </aside>
+                    </form>
+                </section>
+            </main>
+        </section>
+        <script src="../script/addJarModal.js" defer></script>
+    </body>
+</html>
