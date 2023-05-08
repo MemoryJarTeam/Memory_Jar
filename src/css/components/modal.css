@@ -1,0 +1,27 @@
+@media (min-width: 300px) {
+    .modalBox {
+        background-color: var(--modalColor);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        row-gap: 4vh;
+        padding: 7%;
+        border-radius: 30px;
+        width: 70vw;
+        /* min-height: 55vh; */
+    }
+}
+
+@media (min-width: 700px) {
+    .modalBox {
+        padding: 3%;
+        row-gap: 6vh;
+    }
+}
+
+@media (min-width: 1000px) {
+    .modalBox {
+        width: 55vw;
+    }
+}
