@@ -2,16 +2,47 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import { LogIn } from './components/logIn';
+import { SignUp } from './components/signUp';
+import { UserSettings } from './components/userSetting';
+import { MainPage } from './components/mainPage';
+import { AddJar } from './components/addJar';
+import { MemoryWriting } from './components/memoryWriting';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <BrowserRouter>
+    <Routes>
+      <Route
+        path="/"
+        element={<App/>}
+      />
+      <Route
+        path="/login"
+        element={<LogIn/>}
+      />
+      <Route
+        path="/sign-up"
+        element={<SignUp/>}
+      />
+      <Route
+        path="/user-setting"
+        element={<UserSettings/>}
+      />
+      <Route
+        path="/main-page"
+        element={<MainPage/>}
+      />
+      <Route
+        path="/new-jar"
+        element={<AddJar/>}
+      />
+      <Route
+        path="/new-memory"
+        element={<MemoryWriting/>}
+      />
+    </Routes>
+  </BrowserRouter>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
