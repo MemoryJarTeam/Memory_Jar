@@ -4,6 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import jarCharacter2 from '../image/jarCharacter-2.png'
 
 class IntroClass extends React.Component{
+   handleLogIn = ()=>{
+      this.props.navigate('/login');
+   }
+
+   handleSignUp = ()=>{
+      this.props.navigate('/sign-up');
+   }
+
    render(){
       return(
          <section className="intro">
