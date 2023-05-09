@@ -19,6 +19,7 @@ class MainPageClass extends React.Component{
       fetch("http://localhost:5000/user-loged")
       .then((response)=>response.json())
       .then((userData)=>{
+         console.log(userData)
          this.setState({userInfo: userData[0]});
          if(userData[0].jar.length !== 0){
             this.setState({hasJars: true});
