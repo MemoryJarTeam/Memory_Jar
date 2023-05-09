@@ -37,6 +37,10 @@ class MainPageClass extends React.Component{
       });
    }
 
+   handleMainPage = ()=>{
+      this.props.navigate("/main-page");
+   }
+
    handleNewJar = ()=>{
       this.props.navigate("/new-jar");
    }
@@ -129,7 +133,7 @@ class MainPageClass extends React.Component{
                   <footer>
                         <section>
                            <button>
-                              <i className="fa-solid fa-house-chimney"></i>
+                              <i className="fa-solid fa-house-chimney" onClick={this.handleMainPage}></i>
                            </button>
                            <button>
                               <i className="fa-solid fa-user" onClick={this.handleUser} ></i>
@@ -165,7 +169,7 @@ class MainPageClass extends React.Component{
                      <footer>
                         <section>
                            <button>
-                              <i className="fa-solid fa-house-chimney"></i>
+                              <i className="fa-solid fa-house-chimney" onClick={this.handleMainPage}></i>
                            </button>
                            <button>
                               <i className="fa-solid fa-user" onClick={this.handleUser}></i>

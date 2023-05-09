@@ -1,5 +1,5 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 class MemoryBeadClass extends React.Component {
     constructor(props) {
@@ -11,22 +11,23 @@ class MemoryBeadClass extends React.Component {
     }
 
     MemoryBeadList = () => {
-        if(this.state.dataIsReturned){
+        if (this.state.dataIsReturned) {
             return (
-                {
-                    // this.state.
-                }
+                // {
+                //     // this.state.
+                // }
                 <div className="bead"></div>
-            )
-    }
-    render(){
-        return(
+            );
+        }
+        // render(){
+        //     return(
 
-        )
-    }
+        //     )
+        // }
+    };
 }
 
-export function MemoryBead(props){
+export function MemoryBead(props) {
     const navigate = useNavigate();
-    return(<MemoryBeadClass navigate={navigate} />)
+    return <MemoryBeadClass navigate={navigate} />;
 }
