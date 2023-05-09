@@ -79,7 +79,7 @@ class MainPageClass extends React.Component{
          return(
             <ul id="menu">
                <li>
-                  <button onClick={this.handleNewJar}>Add New Jar</button>
+                  <button className='navAddJarBtn' onClick={this.handleNewJar}>Add New Jar</button>
                </li>
                {
                   this.state.userInfo.jar.map((jar)=>{
