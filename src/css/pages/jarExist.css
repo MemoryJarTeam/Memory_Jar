@@ -1,4 +1,13 @@
 @media (min-width: 300px) {
+    .jarCapColor {
+        background-color: red;
+        width: 233px;
+        height: 82px;
+        border-radius: 329px 294px 149px 176px / 80px 72px 31px 29px;
+        position: absolute;
+        z-index: 5;
+        top: 1px;
+    }
     .jarexist {
         display: flex;
         flex-direction: column;
@@ -31,6 +40,7 @@
         width: 250px;
         position: absolute;
         top: 0;
+        z-index: 10;
     }
     .jarBottle {
         position: absolute;
@@ -51,6 +61,7 @@
         width: 200px;
         text-align: center;
         top: 550px;
+        font-size: 18px;
     }
 
     .jarexist-main button {

@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from "react-router-dom";
 
 import jarCap from '../image/cap.svg'
+// import { ReactComponent as JarCap } from '../image/cap.svg';
 
 class MainPageClass extends React.Component{
    constructor(props){
@@ -113,7 +114,9 @@ class MainPageClass extends React.Component{
                         <p>{this.state.currentJarInfo.name}</p>
                         <article className='jarArticle'>
                            <section className='jarGroup'>
-                              <img src={jarCap} alt='cap' className='jarCap'/>
+                              <img src={jarCap} alt='cap' fill='red' className='jarCap'/>
+                              {/* <JarCap fill='red' className='jarCap'/> */}
+                              <div className='jarCapColor'></div>
                               <div className='jarBottle'></div>
                            </section>
                            <p>D - <span className='DDate'>20</span></p>
