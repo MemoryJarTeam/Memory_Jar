@@ -5,16 +5,17 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        width: 100%;
+        width: 90%;
         position: fixed;
         z-index: 10;
         bottom: 0;
+        padding: 0 5%;
     }
 
     footer > section {
         display: flex;
-        width: 70%;
-        justify-content: space-around;
+        width: 100%;
+        justify-content: space-between;
     }
 
     footer button {
@@ -27,6 +28,7 @@
         align-items: center;
         border: none;
         border-radius: 5px;
+        font-size: 20px;
     }
 }
 
@@ -38,6 +40,6 @@
 
 @media (min-width: 1000px) {
     footer button {
-        font-size: 16px;
+        font-size: 28px;
     }
 }

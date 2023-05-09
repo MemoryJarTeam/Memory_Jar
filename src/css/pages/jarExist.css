@@ -47,7 +47,7 @@
         top: 70px;
         border: 8px solid black;
         width: 320px;
-        height: 55vh;
+        height: 53vh;
         border-radius: 80px 80px 25px 25px / 90px 90px 25px 25px;
     }
 
@@ -60,7 +60,7 @@
         position: absolute;
         width: 200px;
         text-align: center;
-        top: 550px;
+        top: 565px;
         font-size: 18px;
     }
 
