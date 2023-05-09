@@ -9,7 +9,16 @@ import iconImgButton from '../image/icon/icon-img-button.svg'
 class MemoryWritingClass extends React.Component{
    constructor(props){
       super(props);
-      this.state = {dataIsReturned: false}
+      this.state = {
+        userDataIsReturned: false,
+        jarDataIsReturned: false,
+        keyWord: '', 
+        level: '',
+        text: '',  
+        userInfo: [],
+        currentJarId: null,
+        lastMemoryId: null
+     };
    }
 
    componentDidMount(){
@@ -17,10 +26,14 @@ class MemoryWritingClass extends React.Component{
       .then((response)=>response.json())
       .then((userData)=>{
          this.setState({userInfo: userData[0]});
-         if(userData[0].jar.length !== 0){
-            this.setState({hasJars: true});
-         }
-         this.setState({dataIsReturned: true});
+         this.setState({lastMemoryId: userData[1].lastMemoryId});
+         this.setState({userDataIsReturned: true});
+      });
+      fetch("http://localhost:5000/current-jar")
+      .then((response)=>response.json())
+      .then((currentJarId)=>{
+         this.setState({currentJarId: currentJarId[0].currentJarId});
+         this.setState({jarDataIsReturned: true});
       });
    }
 
@@ -28,12 +41,41 @@ class MemoryWritingClass extends React.Component{
       this.props.navigate('/main-page');
    }
 
-   handleSubmit = ()=>{
-      this.props.navigate('/main-page');
+   handleChange = (event) =>{
+        this.setState({[event.target.name]: event.target.value});
+   }
+
+   handleSubmit = (event)=>{
+        event.preventDefault();
+        const newDate = new Date();
+        const currentDate = newDate.getDate() + '/' + (newDate.getMonth()+1) + '/' + newDate.getFullYear();
+        let newMemory = {
+            "memoryId": this.state.lastMemoryId+1,
+            "jarId": this.state.currentJarId,
+            "userId": this.state.userInfo.id,
+            "date": currentDate,
+            "keyWord": this.state.keyWord,
+            "level": this.state.level,
+            "text": this.state.text,
+            "picture": "http://dummyimage.com/100x100.png/dddddd/000000"
+        }
+
+        fetch("http://localhost:5000/new-memory", {
+         method: 'POST',
+         headers: {
+            'Content-type': 'application/json'
+        },
+            body: JSON.stringify(newMemory)
+        }).then(function(response){
+            return response.json();
+        });
+        
+        this.props.navigate('/main-page');
    }
 
    render(){
-      return(
+    if(this.state.userDataIsReturned && this.state.jarDataIsReturned){
+        return(
          <section className="memoryWriting">
             <nav className="backBtn">
                 <img
@@ -50,8 +92,11 @@ class MemoryWritingClass extends React.Component{
                             <p>Keyword Title</p>
                             <input
                                 type="text"
-                                maxlength="20"
+                                name='keyWord'
+                                maxLength="20"
                                 placeholder="Summarize your memory in 20 letters!"
+                                value={this.state.value} 
+                                onChange={this.handleChange}
                             />
                         </aside>
                         <aside>
@@ -62,10 +107,30 @@ class MemoryWritingClass extends React.Component{
                                     alt="empty-heart"
                                 />
                                 <article className="colorBtn">
-                                    <button></button>
-                                    <button></button>
-                                    <button></button>
-                                    <button></button>
+                                    <button 
+                                        type='button'
+                                        name='level' 
+                                        value='#fdf7c3' 
+                                        onClick={this.handleChange}
+                                    ></button>
+                                    <button 
+                                        type='button'
+                                        name='level' 
+                                        value='#ffdeb4' 
+                                        onClick={this.handleChange}
+                                    ></button>
+                                    <button 
+                                        type='button'
+                                        name='level' 
+                                        value='#ffb4b4' 
+                                        onClick={this.handleChange}
+                                    ></button>
+                                    <button 
+                                        type='button'
+                                        name='level' 
+                                        value='#b2a4ff' 
+                                        onClick={this.handleChange}
+                                    ></button>
                                 </article>
                                 <img
                                     src={heartSolid}
@@ -74,7 +139,12 @@ class MemoryWritingClass extends React.Component{
                             </section>
                         </aside>
                         <aside>
-                            <textarea placeholder="Write your memory"></textarea>
+                            <textarea 
+                                name='text' 
+                                placeholder="Write your memory"
+                                value={this.state.value} 
+                                onChange={this.handleChange}
+                            ></textarea>
                             <label
                                 htmlFor="updateMemoryImg"
                                 className="updateMemoryImg"
@@ -85,7 +155,7 @@ class MemoryWritingClass extends React.Component{
                                 />
                             </label>
                             <input
-                                onchange="imageUpload(event)"
+                                // onChange={}
                                 id="updateMemoryImg"
                                 type="file"
                                 accept="image/*"
@@ -100,8 +170,13 @@ class MemoryWritingClass extends React.Component{
             </main>
         </section>
       )
+    }
+    else{
+        // return(
+        //     <h1>Loading...</h1>
+        // )
+    }
    }
-
 }
 
 export function MemoryWriting(props){

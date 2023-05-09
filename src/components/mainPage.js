@@ -6,7 +6,12 @@ import jar from '../image/jar.png'
 class MainPageClass extends React.Component{
    constructor(props){
       super(props)
-      this.state = {dataIsReturned: false, hasJars: false, userInfo: [], currentJarInfo: []}
+      this.state = {
+         dataIsReturned: false, 
+         hasJars: false, 
+         userInfo: [], 
+         currentJarInfo: []
+      }
    }
 
    componentDidMount(){

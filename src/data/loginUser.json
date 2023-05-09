@@ -1,1 +1,12 @@
-[{"id":11,"name":"day1","email":"day1@mail.com","jar":[]},{"lastJarId":22,"lastMemoryId":100}]
+[
+    {
+        "id": 0,
+        "name": "NoJars",
+        "email": "nojar@mail.com",
+        "jar": []
+    },
+    {
+        "lastJarId": 22,
+        "lastMemoryId": 100
+    }
+]

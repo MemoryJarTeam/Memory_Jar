@@ -11,7 +11,7 @@ class SplashPageClass extends React.Component {
     render() {
         return (
             <section>
-                <figure class="splash">
+                <figure className="splash">
                     <img src={jarCharacter2} alt="Jar" />
                 </figure>
             </section>
