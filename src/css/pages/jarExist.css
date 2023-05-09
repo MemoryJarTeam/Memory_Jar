@@ -1,4 +1,3 @@
-
 @media (min-width: 300px) {
     .jarexist {
         display: flex;
@@ -12,68 +11,114 @@
         align-items: center;
         row-gap: 3vh;
         padding-top: 10%;
+        position: relative;
     }
 
-    .jarexist-main p {
+    .jarexist-main .jarArticle {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2vh;
+        position: relative;
+        align-items: center;
+    }
+    .jarexist-main .jarGroup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    .jarCap {
+        width: 250px;
+        position: absolute;
+        top: 0;
+    }
+    .jarBottle {
+        position: absolute;
+        top: 70px;
+        border: 8px solid black;
+        width: 320px;
+        height: 55vh;
+        border-radius: 80px 80px 25px 25px / 90px 90px 25px 25px;
+    }
+
+    .jarexist-main > p {
         font-size: 20px;
         text-align: center;
     }
 
-    .jarexist-main > article {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .jarArticle > p {
+        position: absolute;
+        width: 200px;
+        text-align: center;
+        top: 550px;
     }
 
     .jarexist-main button {
-        width: 6vh;
-        height: 6vh;
+        width: 5vh;
+        height: 5vh;
         background-color: var(--btnColor);
         border: none;
+        position: absolute;
+        right: 30px;
+        top: 50px;
     }
-    
+
     .jarexist-main > section {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-
-    .jarexist-main img {
-        width: 90%;
+    .DDate {
+        color: rgb(255, 102, 46);
+        font-weight: 800;
     }
-
 }
 
 @media (min-width: 700px) {
-
-
     .jarexist-main button {
-        width: 6vh;
-        height: 6vh;
-        font-size: 24px;
+        width: 5.5vh;
+        height: 5.5vh;
+        font-size: 22px;
     }
 
-    .jarexist-main p {
+    .jarexist-main > p {
         font-size: 28px;
     }
 
-    .jarexist-main img {
-        width: 100%;
+    .jarArticle > p {
+        font-size: 20px;
+        top: 510px;
+    }
+
+    .jarBottle {
+        width: 350px;
+        height: 50vh;
     }
 }
 
 @media (min-width: 1000px) {
-
     .jarexist-main {
-        padding-top: 5%;
+        padding-top: 6%;
     }
 
-    .jarexist-main img {
-        width: 70%;
+    .jarexist-main button {
+        width: 6vh;
+        height: 6vh;
+        font-size: 22px;
+        right: 200px;
+        top: 100px;
     }
 
-    .jarexist-main p {
-        font-size: 20px;
+    .jarexist-main > p {
+        font-size: 28px;
     }
 
+    .jarArticle > p {
+        font-size: 25px;
+        top: 510px;
+    }
+
+    .jarBottle {
+        width: 400px;
+    }
 }
