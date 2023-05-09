@@ -7,7 +7,13 @@ import imgFile from '../image/image.png'
 class SignUpClass extends React.Component{
    constructor(props){
       super(props);
-      this.state = {name: '', email: '', password: '', confirmPass: '', userList: []};
+      this.state = {
+         name: '', 
+         email: '', 
+         password: '', 
+         confirmPass: '', 
+         userList: []
+      };
    };
 
    componentDidMount(){

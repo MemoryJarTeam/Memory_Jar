@@ -1,15 +1,17 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 
-import jar from '../image/jar.png'
-import jarSvg from '../image/jar.svg'
-import jarCap from '../image/bottle-cap.png'
-import jarCap2 from '../image/cap.svg'
+import jarCap from '../image/cap.svg'
 
 class MainPageClass extends React.Component{
    constructor(props){
       super(props)
-      this.state = {dataIsReturned: false, hasJars: false, userInfo: [], currentJarInfo: []}
+      this.state = {
+         dataIsReturned: false, 
+         hasJars: false, 
+         userInfo: [], 
+         currentJarInfo: []
+      }
    }
 
    componentDidMount(){
@@ -111,7 +113,7 @@ class MainPageClass extends React.Component{
                         <p>{this.state.currentJarInfo.name}</p>
                         <article className='jarArticle'>
                            <section className='jarGroup'>
-                              <img src={jarCap2} alt='cap' className='jarCap'/>
+                              <img src={jarCap} alt='cap' className='jarCap'/>
                               <div className='jarBottle'></div>
                            </section>
                            <p>D - <span className='DDate'>20</span></p>
