@@ -1,10 +1,10 @@
 import './App.css';
-import { Intro } from './components/intro';
+import { SplashPage } from './components/splashPage';
 
 function App() {
   return (
     <div className="App">
-      <Intro/>
+      <SplashPage/>
     </div>
   );
 }

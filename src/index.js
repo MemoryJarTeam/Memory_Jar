@@ -10,6 +10,7 @@ import { UserSettings } from './components/userSetting';
 import { MainPage } from './components/mainPage';
 import { AddJar } from './components/addJar';
 import { MemoryWriting } from './components/memoryWriting';
+import { Intro } from './components/intro';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,10 @@ root.render(
       <Route
         path="/"
         element={<App/>}
+      />
+      <Route
+        path="/intro"
+        element={<Intro/>}
       />
       <Route
         path="/login"
