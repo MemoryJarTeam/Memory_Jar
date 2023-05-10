@@ -63,18 +63,18 @@ class LogInClass extends React.Component{
                      onClick={this.handleBack}
                   />
                </nav>
-                        <section className="logIn">
-               <figure>
-                  <img src={jarCharacter2} alt="Jar Logo"/>
-               </figure>
-               <form onSubmit={this.handleSubmit}>
-                  <aside>
-                     <input type="email" name="email" id="email" placeholder="Email" value={this.state.value} onChange={this.handleChange}/>
-                     <input type="password" name="password" id="password" placeholder="Password" value={this.state.value} onChange={this.handleChange}/>
-                  </aside>
-                  <input type="submit" value="Log In" />
-               </form>
-                        </section>
+               <section className="logIn">
+                  <figure>
+                     <img src={jarCharacter2} alt="Jar Logo"/>
+                  </figure>
+                  <form onSubmit={this.handleSubmit}>
+                     <aside>
+                        <input type="email" name="email" id="email" placeholder="Email" value={this.state.value} onChange={this.handleChange}/>
+                        <input type="password" name="password" id="password" placeholder="Password" value={this.state.value} onChange={this.handleChange}/>
+                     </aside>
+                     <input type="submit" value="Log In" />
+                  </form>
+               </section>
             </section>
       )
    }

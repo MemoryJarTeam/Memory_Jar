@@ -65,6 +65,7 @@ class SignUpClass extends React.Component{
          }
          counter++;
       });
+      this.props.navigate("/main-page");
       event.preventDefault();
    }
 
