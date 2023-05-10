@@ -10,6 +10,7 @@ let jarList = JSON.parse(fileManager.readFileSync(jarPath, "utf8"));
 let memoryList = JSON.parse(fileManager.readFileSync(memoryPath, "utf8"));
 let userLogin = [];
 let currentJarId = [];
+let currentMemoryId = [];
 
 /* Server Settings */
 const express = require('express');
@@ -98,6 +99,10 @@ app.get("/current-jar", function(req, res){
    res.json(currentJarId);
 });
 
+app.get("/current-memory", function(req, res){
+   res.json(currentMemoryId);
+});
+
 /* POST */
 
 app.post("/user-login", function(req, res){
@@ -161,6 +166,14 @@ app.post("/change-current-jar", function(req, res){
       "currentJarId": formContent.newCurrentJarId
    }];
    fileManager.writeFileSync(currentJarIdPath, JSON.stringify(currentJarId));
+});
+
+app.post("/change-current-memory", function(req, res){
+   const formContent = req.body;
+   
+   currentMemoryId = [{
+      "currentMemoryId": formContent.newCurrentMemoryId
+   }];
 });
 
 app.listen(PORT, function(){

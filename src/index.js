@@ -11,6 +11,7 @@ import { MainPage } from './components/mainPage';
 import { AddJar } from './components/addJar';
 import { MemoryWriting } from './components/memoryWriting';
 import { Intro } from './components/intro';
+import { KeyWord } from './components/keyWord';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -47,6 +48,18 @@ root.render(
       <Route
         path="/new-memory"
         element={<MemoryWriting/>}
+      />
+      <Route
+        path="/keyword"
+        element={<KeyWord/>}
+      />
+      <Route
+        path="/calendar"
+        element={<Intro/>}
+      />
+      <Route
+        path="/memory"
+        element={<Intro/>}
       />
     </Routes>
   </BrowserRouter>
