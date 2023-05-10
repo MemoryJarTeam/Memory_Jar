@@ -1,9 +1,7 @@
 import React from 'react'
-import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import jarCap from '../image/cap.svg'
-// import { ReactComponent as JarCap } from '../image/cap.svg';
 
 class MainPageClass extends React.Component{
    
@@ -23,7 +21,6 @@ class MainPageClass extends React.Component{
       .then((userData)=>{
          this.setState({userInfo: userData[0]});
          if(userData[0].jar.length !== 0){
-            this.setState({hasJars: true});
             fetch("http://localhost:5000/current-jar")
             .then((response)=>response.json())
             .then((currentJarId)=>{
@@ -32,10 +29,10 @@ class MainPageClass extends React.Component{
                      this.setState({currentJarInfo: jar});
                   }
                })
-               this.setState({dataIsReturned: true});
+               this.setState({hasJars: true});
             });
          }
-         
+         this.setState({dataIsReturned: true});
       });
    }
 
@@ -81,7 +78,7 @@ class MainPageClass extends React.Component{
    }
 
    JarList = () =>{
-      if(this.state.dataIsReturned){
+      if(this.state.dataIsReturned && this.state.hasJars){
          return(
             <ul id="menu">
                <li>
@@ -110,7 +107,7 @@ class MainPageClass extends React.Component{
    }
 
    MemoryArticle = ()=>{
-      if(this.state.dataIsReturned){
+      if(this.state.dataIsReturned && this.state.hasJars){
          let memory = this.state.currentJarInfo.memoryList;
          return(
             <article>
