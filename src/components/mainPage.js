@@ -149,22 +149,8 @@ class MainPageClass extends React.Component{
                               <div className='jarCapColor' style={{backgroundColor: this.state.currentJarInfo.color}}></div>
                               <div className='jarBottle'>
                                  <this.MemoryArticle/>
-                                 {/* <article>
-                                    <div className="bead"></div>
-                                    <div className="bead"></div>
-                                    <div className="bead"></div>
-                                    <div className="bead"></div>
-                                    <div className="bead"></div>
-                                    <div className="bead"></div>
-                                    <div className="bead"></div>
-                                    <div className="bead"></div>
-                                    <div className="bead"></div>
-                                    <div className="bead"></div>
-                                    <div className="bead"></div>
-                                    <div className="bead"></div>
-                                    <div className="bead"></div>
-                                 </article> */}
                               </div>
+                              <div className='hoverDiv'>{this.state.currentJarInfo.memoryList.length} memories!</div>
                            </section>
                            <p>D - <span className='DDate'>{this.state.currentJarInfo.date}</span></p>
                         </article>
