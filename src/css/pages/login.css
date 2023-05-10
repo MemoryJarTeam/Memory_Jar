@@ -1,11 +1,15 @@
 .logIn{
-   height: 100vh;
    background-color: #ffffdc;
 }
 
-
 @media (min-width: 300px) {
+   .loginNav  {
+      background-color: #ffffdc;
+      height: 100vh;
+   }
+
    .logIn{
+      height: 80vh;
       /* width: 80vw; */
       /* padding: 5vh 0vh; */
       display: flex;

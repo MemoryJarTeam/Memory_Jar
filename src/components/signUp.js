@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import userPic from '../image/user.png'
 import imgFile from '../image/image.png'
+import iconArrowLeft from '../image/icon/icon-arrow-left.svg'
 
 class SignUpClass extends React.Component{
    constructor(props){
@@ -24,6 +25,10 @@ class SignUpClass extends React.Component{
       });
    };
 
+   handleBack = ()=>{
+      this.props.navigate('/intro');
+   }
+
    handleChange = (event) =>{
       this.setState({[event.target.name]: event.target.value});
    }
@@ -31,6 +36,10 @@ class SignUpClass extends React.Component{
    handleSubmit = (event) =>{
       let counter = 0;
       let lastUser = this.state.userList.length-1;
+      if(this.state.password !== this.state.confirmPass){ 
+         alert("Password and Confirm Password must be same"); 
+         return;
+       }
       this.state.userList.forEach((user)=>{
          if(user.email === this.state.email){
             alert("This user exist");
@@ -61,23 +70,32 @@ class SignUpClass extends React.Component{
 
    render(){
       return(
-         <section className="logIn">
-            <form onSubmit={this.handleSubmit}>
-               <figure className="userPic">
-                  <img src={userPic} alt="User Pic"/>
-                  <label htmlFor="userPic">
-                     <img src={imgFile} alt="Icon"/>
-                  </label>
-                  <input type="file" accept="image/*" name="userPic" id="userPic"/>
-               </figure>
-               <aside>
-                  <input type="text" name="name" id="name" placeholder="User Name" value={this.state.value} onChange={this.handleChange}/>
-                  <input type="email" name="email" id="email" placeholder="User Email" value={this.state.value} onChange={this.handleChange}/>
-                  <input type="password" name="password" id="password" placeholder="Password" value={this.state.value} onChange={this.handleChange}/>
-                  <input type="password" name="confirmPass" id="confirmPass"  placeholder="Confirm Password" value={this.state.value} onChange={this.handleChange}/>
-               </aside>
-               <input type="submit" value="Sign Up"/>
-            </form>
+         <section className='loginNav'>
+            <nav className="backBtn">
+               <img
+                  src={iconArrowLeft}
+                  alt="arrow-left-icon"
+                  onClick={this.handleBack}
+               />
+            </nav>
+            <section className="logIn">
+               <form onSubmit={this.handleSubmit}>
+                  <figure className="userPic">
+                     <img src={userPic} alt="User Pic"/>
+                     <label htmlFor="userPic">
+                        <img src={imgFile} alt="Icon"/>
+                     </label>
+                     <input type="file" accept="image/*" name="userPic" id="userPic"/>
+                  </figure>
+                  <aside>
+                     <input type="text" name="name" id="name" placeholder="User Name" value={this.state.value} onChange={this.handleChange}/>
+                     <input type="email" name="email" id="email" placeholder="User Email" value={this.state.value} onChange={this.handleChange}/>
+                     <input type="password" name="password" id="password" placeholder="Password" value={this.state.value} onChange={this.handleChange}/>
+                     <input type="password" name="confirmPass" id="confirmPass"  placeholder="Confirm Password" value={this.state.value} onChange={this.handleChange}/>
+                  </aside>
+                  <input type="submit" value="Sign Up"/>
+               </form>
+            </section>
          </section>
       )
    }
