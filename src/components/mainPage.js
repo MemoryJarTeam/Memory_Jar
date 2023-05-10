@@ -145,7 +145,6 @@ class MainPageClass extends React.Component{
                         </section>
                   </nav>
                   <main className="jarexist-main">
-                              <div onClick={this.test}>test</div>
                         <p>{this.state.currentJarInfo.name}</p>
                         <article className='jarArticle'>
                            <section className='jarGroup'>
