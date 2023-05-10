@@ -112,24 +112,28 @@ class MemoryWritingClass extends React.Component{
                                         name='level' 
                                         value='#fdf7c3' 
                                         onClick={this.handleChange}
+                                        className={this.state.level === '#fdf7c3' ? 'selected' : ''}
                                     ></button>
                                     <button 
                                         type='button'
                                         name='level' 
                                         value='#ffdeb4' 
                                         onClick={this.handleChange}
+                                        className={this.state.level === '#ffdeb4' ? 'selected' : ''}
                                     ></button>
                                     <button 
                                         type='button'
                                         name='level' 
                                         value='#ffb4b4' 
                                         onClick={this.handleChange}
+                                        className={this.state.level === '#ffb4b4' ? 'selected' : ''}
                                     ></button>
                                     <button 
                                         type='button'
                                         name='level' 
                                         value='#b2a4ff' 
                                         onClick={this.handleChange}
+                                        className={this.state.level === '#b2a4ff' ? 'selected' : ''}
                                     ></button>
                                 </article>
                                 <img

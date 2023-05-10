@@ -76,6 +76,10 @@
        box-shadow: 0 4px 4px -4px black;
    }
 
+   .memoryWriting .colorBox button.selected {
+        border: 3px groove whitesmoke;
+   }
+
    .memoryWriting .colorBtn > button {
        width: 25%;
        height: 5vh;
