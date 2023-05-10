@@ -93,10 +93,12 @@
         display: flex;
         flex-wrap: wrap-reverse;
         align-content: flex-start;
+        column-gap: 0.5vh;
+        justify-content: center;
     }
     .bead {
-        width: 7vh;
-        height: 7vh;
+        width: 6vh;
+        height: 6vh;
         background-color: aqua;
         border-radius: 50%;
         z-index: 1;
@@ -146,6 +148,11 @@
         width: 350px;
         height: 50vh;
     }
+
+    .bead {
+        width: 6.5vh;
+        height: 6.5vh;
+    }
     .hoverDiv {
         width: 30vw;
         height: 10vh;
@@ -178,9 +185,13 @@
     .jarBottle {
         width: 400px;
     }
+    .bead {
+        width: 7.5vh;
+        height: 7.5vh;
+    }
 
     .hoverDiv {
-        width: 28vw;
+        width: 20vw;
         height: 11vh;
         font-size: 20px;
     }

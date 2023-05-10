@@ -109,20 +109,40 @@ class MainPageClass extends React.Component{
    MemoryArticle = ()=>{
       if(this.state.dataIsReturned && this.state.hasJars){
          let memory = this.state.currentJarInfo.memoryList;
-         return(
-            <article>
-               {
-                  memory.map((mem)=>{
-                     return(
-                        <this.MemoryBead
-                           key={mem.memoryId}
-                           color={mem.level}
-                        />
-                     )
-                  })
-               }
-            </article>
-         )
+         if(memory.length<37){
+            return(
+               <article>
+                  {
+                     memory.map((mem)=>{
+                        return(
+                           <this.MemoryBead
+                              key={mem.memoryId}
+                              color={mem.level}
+                           />
+                        )
+                     })
+                  }
+               </article>
+            )
+         } else {
+            // console.log(memory)
+            let newMemoryList = memory.slice(0,36)
+            console.log(newMemoryList)
+            return (
+               <article>
+                  {
+                     newMemoryList.map((mem)=>{
+                        return(
+                           <this.MemoryBead
+                              key={mem.memoryId}
+                              color={mem.level}
+                           />
+                        )
+                     })
+                  }
+               </article>
+            )
+         }
       }
    }
 
