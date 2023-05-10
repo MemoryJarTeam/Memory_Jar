@@ -1,10 +1,12 @@
 import React from 'react'
+import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import jarCap from '../image/cap.svg'
 // import { ReactComponent as JarCap } from '../image/cap.svg';
 
 class MainPageClass extends React.Component{
+   
    constructor(props){
       super(props)
       this.state = {
@@ -33,6 +35,7 @@ class MainPageClass extends React.Component{
                })
             });
          }
+         
          this.setState({dataIsReturned: true});
       });
    }
@@ -101,7 +104,9 @@ class MainPageClass extends React.Component{
       }
    }
 
+
    render(){
+      console.log(this.state)
       if(this.state.dataIsReturned){
          if(this.state.hasJars){
             return(
@@ -119,12 +124,11 @@ class MainPageClass extends React.Component{
                         <p>{this.state.currentJarInfo.name}</p>
                         <article className='jarArticle'>
                            <section className='jarGroup'>
-                              <img src={jarCap} alt='cap' fill='red' className='jarCap'/>
-                              {/* <JarCap fill='red' className='jarCap'/> */}
-                              <div className='jarCapColor'></div>
+                              <img src={jarCap} alt='cap' className='jarCap'/>
+                              <div className='jarCapColor' style={{backgroundColor: this.state.currentJarInfo.color}}></div>
                               <div className='jarBottle'></div>
                            </section>
-                           <p>D - <span className='DDate'>20</span></p>
+                           <p>D - <span className='DDate'>{this.state.currentJarInfo.date}</span></p>
                         </article>
                         <button onClick={this.handleNewMemory}>
                            <i className="fa-solid fa-plus"></i>
