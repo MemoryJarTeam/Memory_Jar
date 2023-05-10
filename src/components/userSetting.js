@@ -3,6 +3,7 @@ import React from 'react'
 import userPic from '../image/user.png'
 import imgFile from '../image/image.png'
 import { useNavigate } from 'react-router-dom';
+import iconArrowLeft from '../image/icon/icon-arrow-left.svg'
 
 class UserSettingsClass extends React.Component{
    constructor(props){
@@ -19,6 +20,10 @@ class UserSettingsClass extends React.Component{
          this.setState({email: userData[0].email});
          this.setState({dataIsReturned: true});
       });
+   }
+
+   handleBack = ()=>{
+      this.props.navigate('/main-page');
    }
 
    handleChange = (event) =>{
@@ -48,21 +53,30 @@ class UserSettingsClass extends React.Component{
    render(){
       if(this.state.dataIsReturned){
          return(
-            <section className="logIn">
-               <form onSubmit={this.handleSubmit}>
-                  <figure className="userPic">
-                     <img src={userPic} alt="User Pic"/>
-                     <label htmlFor="userPic">
-                        <img src={imgFile} alt="Icon"/>
-                     </label>
-                     <input type="file" accept="image/*" name="userPic" id="userPic"/>
-                  </figure>
-                  <aside>
-                     <input type="text" name="name" id="name" placeholder="User Name" defaultValue={this.state.userInfo.name} onChange={this.handleChange}  />
-                     <input type="email" name="email" id="email" placeholder="User Email" defaultValue={this.state.userInfo.email} onChange={this.handleChange} />
-                  </aside>
-                  <input type="submit" value="Edit"/>
-               </form>
+            <section className="loginNav">
+               <nav className="backBtn">
+                     <img
+                        src={iconArrowLeft}
+                        alt="arrow-left-icon"
+                        onClick={this.handleBack}
+                     />
+                  </nav>
+               <section className="logIn">
+                  <form onSubmit={this.handleSubmit}>
+                     <figure className="userPic">
+                        <img src={userPic} alt="User Pic"/>
+                        <label htmlFor="userPic">
+                           <img src={imgFile} alt="Icon"/>
+                        </label>
+                        <input type="file" accept="image/*" name="userPic" id="userPic"/>
+                     </figure>
+                     <aside>
+                        <input type="text" name="name" id="name" placeholder="User Name" defaultValue={this.state.userInfo.name} onChange={this.handleChange}  />
+                        <input type="email" name="email" id="email" placeholder="User Email" defaultValue={this.state.userInfo.email} onChange={this.handleChange} />
+                     </aside>
+                     <input type="submit" value="Edit"/>
+                  </form>
+               </section>
             </section>
          )
       }
