@@ -48,6 +48,9 @@
         width: 320px;
         height: 53vh;
         border-radius: 80px 80px 25px 25px / 90px 90px 25px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
     }
 
     .jarexist-main > p {
@@ -81,6 +84,22 @@
     .DDate {
         color: rgb(255, 102, 46);
         font-weight: 800;
+    }
+    .jarBottle > article {
+        position: relative;
+        width: 100%;
+        height: 90%;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        align-content: flex-start;
+    }
+    .bead {
+        width: 7vh;
+        height: 7vh;
+        background-color: aqua;
+        border-radius: 50%;
+        z-index: 1;
     }
 }
 

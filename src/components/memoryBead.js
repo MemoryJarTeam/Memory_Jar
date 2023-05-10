@@ -5,6 +5,7 @@ class MemoryBeadClass extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            userId: "",
             level: "",
             dataIsReturned: false,
         };

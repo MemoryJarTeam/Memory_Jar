@@ -21,7 +21,6 @@ class MainPageClass extends React.Component{
       fetch("http://localhost:5000/user-loged")
       .then((response)=>response.json())
       .then((userData)=>{
-         console.log(userData)
          this.setState({userInfo: userData[0]});
          if(userData[0].jar.length !== 0){
             this.setState({hasJars: true});
@@ -33,10 +32,10 @@ class MainPageClass extends React.Component{
                      this.setState({currentJarInfo: jar});
                   }
                })
+               this.setState({dataIsReturned: true});
             });
          }
          
-         this.setState({dataIsReturned: true});
       });
    }
 
@@ -104,9 +103,34 @@ class MainPageClass extends React.Component{
       }
    }
 
+   MemoryBead = (props)=>{
+      return(
+         <div className="bead" style={{backgroundColor: props.color}}></div>
+      )
+   }
+
+   MemoryArticle = ()=>{
+      if(this.state.dataIsReturned){
+         let memory = this.state.currentJarInfo.memoryList;
+         return(
+            <article>
+               {
+                  memory.map((mem)=>{
+                     return(
+                        <this.MemoryBead
+                           key={mem.memoryId}
+                           color={mem.level}
+                        />
+                     )
+                  })
+               }
+            </article>
+         )
+      }
+   }
+
 
    render(){
-      console.log(this.state)
       if(this.state.dataIsReturned){
          if(this.state.hasJars){
             return(
@@ -121,12 +145,30 @@ class MainPageClass extends React.Component{
                         </section>
                   </nav>
                   <main className="jarexist-main">
+                              <div onClick={this.test}>test</div>
                         <p>{this.state.currentJarInfo.name}</p>
                         <article className='jarArticle'>
                            <section className='jarGroup'>
                               <img src={jarCap} alt='cap' className='jarCap'/>
                               <div className='jarCapColor' style={{backgroundColor: this.state.currentJarInfo.color}}></div>
-                              <div className='jarBottle'></div>
+                              <div className='jarBottle'>
+                                 <this.MemoryArticle/>
+                                 {/* <article>
+                                    <div className="bead"></div>
+                                    <div className="bead"></div>
+                                    <div className="bead"></div>
+                                    <div className="bead"></div>
+                                    <div className="bead"></div>
+                                    <div className="bead"></div>
+                                    <div className="bead"></div>
+                                    <div className="bead"></div>
+                                    <div className="bead"></div>
+                                    <div className="bead"></div>
+                                    <div className="bead"></div>
+                                    <div className="bead"></div>
+                                    <div className="bead"></div>
+                                 </article> */}
+                              </div>
                            </section>
                            <p>D - <span className='DDate'>{this.state.currentJarInfo.date}</span></p>
                         </article>

@@ -3,6 +3,7 @@
    background-color: #ffffdc;
 }
 
+
 @media (min-width: 300px) {
    .logIn{
       /* width: 80vw; */
