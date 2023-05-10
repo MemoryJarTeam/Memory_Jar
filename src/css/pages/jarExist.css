@@ -101,6 +101,9 @@
         border-radius: 50%;
         z-index: 1;
     }
+    .jarGroup:hover {
+        
+    }
 }
 
 @media (min-width: 700px) {
