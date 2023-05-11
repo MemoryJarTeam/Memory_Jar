@@ -10,26 +10,72 @@ class MemoryClass extends React.Component{
       super(props)
       this.state = {
          dataIsReturned: false, 
+         memoryPosition: null,
+         memoryLength: null,
          memoryInfo: []
       }
    }
 
    componentDidMount(){
-      fetch("http://localhost:5000/memory-api")
+      fetch("http://localhost:5000/current-jar")
       .then((response)=>response.json())
-      .then((memoryData)=>{
+      .then((jarData)=>{
+         this.setState({memoryLength: jarData[0].memoryList.length});
          fetch("http://localhost:5000/current-memory")
          .then((response)=>response.json())
-         .then((currentMemoryId)=>{
-            memoryData.forEach((memory)=>{
-               if(memory.memoryId === currentMemoryId[0].currentMemoryId){
-                  this.setState({memoryInfo: memory});
-               }
-            })
+         .then((memoryData)=>{
+            this.setState({memoryPosition: memoryData[0].currentMemoryId});
+            this.setState({memoryInfo: jarData[0].memoryList[memoryData[0].currentMemoryId]});
             this.setState({dataIsReturned: true});
          });
       });
    };
+
+   handleChangeMemory = (props)=>{
+      let newCurrentMemoryId = {
+         "newCurrentMemoryId": parseInt(props.target.id)
+      };
+
+      fetch("http://localhost:5000/change-current-memory", {
+         method: 'POST',
+         headers: {
+            'Content-type': 'application/json'
+         },
+         body: JSON.stringify(newCurrentMemoryId)
+      }).then(function(response){
+         return response.json();
+      });
+      this.props.navigate(0);
+   };
+
+   Button = (props)=>{
+      if(props.position === "back" && this.state.memoryPosition > 0){
+         return(
+            <button 
+               id={this.state.memoryPosition-1} 
+               onClick={this.handleChangeMemory} 
+               className={props.class}
+            ></button>
+         )
+      }
+      else if(props.position === "front" && this.state.memoryPosition < this.state.memoryLength-1){
+         return(
+            <button 
+               id={this.state.memoryPosition+1} 
+               onClick={this.handleChangeMemory} 
+               className={props.class}
+            ></button>
+         )
+      }
+      else{
+         return(
+            <button 
+                disabled
+                className={props.class}
+             ></button> 
+          )
+      }
+   }
 
    render(){
       if(this.state.dataIsReturned){
@@ -39,15 +85,21 @@ class MemoryClass extends React.Component{
                   <img
                      src={iconArrowLeft}
                      alt="arrow-left-icon"
-                     onClick={"a"}
+                     // onClick={"a"}
                   />
                </nav>
                <main className="memory-main">
                   <article className="modalBox">
                      <section>
-                           <button className="fa-solid fa-arrow-left"></button>
-                           <p>{this.state.memoryInfo.date}</p>
-                           <button className="fa-solid fa-arrow-right"></button>
+                        <this.Button
+                           position="back"
+                           class={"fa-solid fa-arrow-left"}
+                        />
+                        <p>{this.state.memoryInfo.date}</p>
+                        <this.Button
+                           position="front"
+                           class={"fa-solid fa-arrow-right"}
+                        />
                      </section>
                      <aside>
                            <small> {this.state.memoryInfo.keyWord} </small>

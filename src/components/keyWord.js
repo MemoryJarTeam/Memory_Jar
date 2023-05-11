@@ -21,12 +21,8 @@ class KeyWordClass extends React.Component{
          if(userData[0].jar.length !== 0){
             fetch("http://localhost:5000/current-jar")
             .then((response)=>response.json())
-            .then((currentJarId)=>{
-               userData[0].jar.forEach((jar)=>{
-                  if(jar.jarId === currentJarId[0].currentJarId){
-                     this.setState({currentJarInfo: jar});
-                  }
-               })
+            .then((currentJar)=>{
+               this.setState({currentJarInfo: currentJar[0]});
                this.setState({dataIsReturned: true});
             });
          }
@@ -67,15 +63,16 @@ class KeyWordClass extends React.Component{
    KeyWordArticle = ()=>{
       if(this.state.dataIsReturned){
          let memory = this.state.currentJarInfo.memoryList;
+         let counter = 0;
          return(
             <article>
                {
                   memory.map((mem)=>{
                      return(
                         <this.KeyWordButton
-                           key={mem.memoryId}
-                           id={mem.memoryId}
-                           keyWord={mem.keyWord}
+                        key={counter}
+                        id={counter++}
+                        keyWord={mem.keyWord}
                         />
                      )
                   })
