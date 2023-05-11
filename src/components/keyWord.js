@@ -56,7 +56,7 @@ class KeyWordClass extends React.Component{
 
    KeyWordButton = (props)=>{
       return(
-         <button id={props.id} onClick={this.handleSelectMemory}>{props.keyWord}</button>
+         <button id={props.id} onClick={this.handleSelectMemory} style={{backgroundColor:props.keyBgColor}}>{props.keyWord}</button>
       )
    }
 
@@ -68,11 +68,13 @@ class KeyWordClass extends React.Component{
             <article>
                {
                   memory.map((mem)=>{
+                     console.log(mem.level)
                      return(
                         <this.KeyWordButton
                         key={counter}
                         id={counter++}
                         keyWord={mem.keyWord}
+                        keyBgColor={mem.level}
                         />
                      )
                   })

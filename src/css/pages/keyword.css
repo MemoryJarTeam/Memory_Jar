@@ -52,7 +52,7 @@
 
     .keyword-main > article > button {
         border: none;
-        background-color: #fdf7c3;
+        /* background-color: #fdf7c3; */
         padding: 1vh;
         gap: 1vh;
     }
