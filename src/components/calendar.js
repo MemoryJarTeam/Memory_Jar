@@ -90,18 +90,12 @@ class CalendarClass extends React.Component {
                         let html = [];
                         if (
                             mark.find(
-                                (x) => x === moment(date).format("YYYY-MM-DD")
+                                (x) => x === moment(date).format("YYYY.MM.DD")
                             )
                         ) {
                             html.push(<div className="dateDot"></div>);
                         }
-                        return (
-                            <>
-                                <div className="flex justify-center items-center absoluteDiv">
-                                    {html}
-                                </div>
-                            </>
-                        );
+                        return <>{html}</>;
                     }}
                 />
             );
