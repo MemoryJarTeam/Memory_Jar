@@ -40,6 +40,7 @@
 
     .keyword-main > section > button:last-child {
         background-color: var(--btnColor);
+        font-weight: 700;
     }
 
     .keyword-main > article {

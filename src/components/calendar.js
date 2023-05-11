@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// import "react-calendar/dist/Calendar.css";
 
 import Calendar from "react-calendar";
 import iconArrowLeft from "../image/icon/icon-arrow-left.svg";
@@ -61,6 +62,7 @@ class CalendarClass extends React.Component {
 
     render() {
         if (this.state.dataIsReturned) {
+            // const [value, onChange] = useState(new Date());
             return (
                 <section className="calendar">
                     <nav className="backBtn">
@@ -73,15 +75,17 @@ class CalendarClass extends React.Component {
                     <main className="calendar-main">
                         <h3>{this.state.currentJarInfo.name}</h3>
                         <section>
+                            <button className="calendarBtn">Calendar</button>
                             <button
-                                className="calendarBtn"
-                                
+                                className="keywordBtn"
+                                onClick={this.handleKeyword}
                             >
-                                Calendar
+                                Key word
                             </button>
-                            <button className="keywordBtn" onClick={this.handleKeyword} >Key word</button>
                         </section>
-                        {/* <this.CalendarArticle /> */}
+                        <article className="calendarBox">
+                            <Calendar />
+                        </article>
                     </main>
                     <footer>
                         <section>
