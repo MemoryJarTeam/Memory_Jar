@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// npm i moment
+import moment from "moment";
 // import "react-calendar/dist/Calendar.css";
-
+// npm install react-calendar
 import Calendar from "react-calendar";
 import iconArrowLeft from "../image/icon/icon-arrow-left.svg";
 
@@ -60,9 +62,54 @@ class CalendarClass extends React.Component {
         this.props.navigate("/memory");
     };
 
+    DateDot = (props) => {
+        return (
+            <div
+                className="dateDot"
+                onClick={this.handleSelectMemory}
+                style={{ backgroundColor: props.keyBgColor }}
+            ></div>
+        );
+    };
+
+    CalendarArticle = () => {
+        let mark = []; // memory date & memory color
+        if (this.state.dataIsReturned) {
+            let memory = this.state.currentJarInfo.memoryList;
+            let counter = 0;
+            return (
+                <Calendar
+                    tileContent={({ date, view }) => {
+                        // Solve From Here!
+                        // {
+                        //     memory.map((mem) => {
+                        //         mark.push(mem.date);
+                        //         console.log(mark);
+                        //     });
+                        // }
+                        let html = [];
+                        if (
+                            mark.find(
+                                (x) => x === moment(date).format("YYYY-MM-DD")
+                            )
+                        ) {
+                            html.push(<div className="dateDot"></div>);
+                        }
+                        return (
+                            <>
+                                <div className="flex justify-center items-center absoluteDiv">
+                                    {html}
+                                </div>
+                            </>
+                        );
+                    }}
+                />
+            );
+        }
+    };
+
     render() {
         if (this.state.dataIsReturned) {
-            // const [value, onChange] = useState(new Date());
             return (
                 <section className="calendar">
                     <nav className="backBtn">
@@ -84,7 +131,12 @@ class CalendarClass extends React.Component {
                             </button>
                         </section>
                         <article className="calendarBox">
-                            <Calendar />
+                            <this.CalendarArticle />
+                            {/* <Calendar
+                                locale="en"
+                                // value={value}
+                                // tileContent={addContent}
+                            /> */}
                         </article>
                     </main>
                     <footer>
