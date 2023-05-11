@@ -33,6 +33,10 @@ class KeyWordClass extends React.Component{
       this.props.navigate("/main-page");
    };
 
+   handleUser = ()=>{
+      this.props.navigate("/user-setting");
+   }
+   
    handleCalendar = ()=>{
       this.props.navigate("/calendar");
    };
@@ -90,31 +94,31 @@ class KeyWordClass extends React.Component{
          return(
             <section className="keyword">
                <nav className="backBtn">
-                   <img
-                       src={iconArrowLeft}
-                       alt="arrow-left-icon"
-                       onClick={this.handleMainPage}
-                   />
+                     <img
+                        src={iconArrowLeft}
+                        alt="arrow-left-icon"
+                        onClick={this.handleMainPage}
+                     />
                </nav>
                <main className="keyword-main">
-                   <h3>{this.state.currentJarInfo.name}</h3>
-                   <section>
-                       <button className="calendarBtn" onClick={this.handleCalendar}>Calendar</button>
-                       <button className="keywordBtn">Key word</button>
-                   </section>
-                   <this.KeyWordArticle/>
+                     <h3>{this.state.currentJarInfo.name}</h3>
+                     <section>
+                        <button className="calendarBtn" onClick={this.handleCalendar}>Calendar</button>
+                        <button className="keywordBtn">Key word</button>
+                     </section>
+                     <this.KeyWordArticle/>
                </main>
                <footer>
-                   <section>
-                       <button>
-                           <i className="fa-solid fa-house-chimney"></i>
-                       </button>
-                       <button>
-                           <i className="fa-solid fa-user"></i>
-                       </button>
-                   </section>
+                     <section>
+                        <button>
+                           <i className="fa-solid fa-house-chimney"  onClick={this.handleMainPage}></i>
+                        </button>
+                        <button>
+                           <i className="fa-solid fa-user" onClick={this.handleUser}></i>
+                        </button>
+                     </section>
                </footer>
-           </section>
+            </section>
          )
       }
       else{
