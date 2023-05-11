@@ -23,12 +23,8 @@ class MainPageClass extends React.Component{
          if(userData[0].jar.length !== 0){
             fetch("http://localhost:5000/current-jar")
             .then((response)=>response.json())
-            .then((currentJarId)=>{
-               userData[0].jar.forEach((jar)=>{
-                  if(jar.jarId === currentJarId[0].currentJarId){
-                     this.setState({currentJarInfo: jar});
-                  }
-               })
+            .then((currentJar)=>{
+               this.setState({currentJarInfo: currentJar[0]});
                this.setState({hasJars: true});
             });
          }

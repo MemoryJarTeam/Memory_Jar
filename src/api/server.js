@@ -70,9 +70,7 @@ function userLog(userId, login=false){
    })
 
    if(login && userLogin[0].jar.length != 0){
-      currentJarId = [{
-         "currentJarId": userLogin[0].jar[0].jarId
-      }];
+      currentJarId = [userLogin[0].jar[0]];
       fileManager.writeFileSync(currentJarIdPath, JSON.stringify(currentJarId));
    }
 }

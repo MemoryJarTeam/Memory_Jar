@@ -12,6 +12,7 @@ import { AddJar } from './components/addJar';
 import { MemoryWriting } from './components/memoryWriting';
 import { Intro } from './components/intro';
 import { KeyWord } from './components/keyWord';
+import { Memory } from './components/memory';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -59,7 +60,7 @@ root.render(
       />
       <Route
         path="/memory"
-        element={<Intro/>}
+        element={<Memory/>}
       />
     </Routes>
   </BrowserRouter>
