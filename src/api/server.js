@@ -3,13 +3,13 @@ const userPath = '../data/users.json';
 const jarPath = '../data/jars.json';
 const memoryPath = '../data/memorys.json';
 const userLoginPath = '../data/loginUser.json';
-const currentJarIdPath = '../data/currentJarId.json';
+const currentJarPath = '../data/currentJarId.json';
 const fileManager = require('fs');
 let userList = JSON.parse(fileManager.readFileSync(userPath, "utf8"));
 let jarList = JSON.parse(fileManager.readFileSync(jarPath, "utf8"));
 let memoryList = JSON.parse(fileManager.readFileSync(memoryPath, "utf8"));
 let userLogin = [];
-let currentJarId = [];
+let currentJar = [];
 let currentMemoryId = [];
 
 /* Server Settings */
@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
 
-function userLog(userId, login=false){
+function userLog(userId, login=false, memoryType=false){
    userList = JSON.parse(fileManager.readFileSync(userPath, "utf8"));
    jarList = JSON.parse(fileManager.readFileSync(jarPath, "utf8"));
    memoryList = JSON.parse(fileManager.readFileSync(memoryPath, "utf8"));
@@ -70,8 +70,20 @@ function userLog(userId, login=false){
    })
 
    if(login && userLogin[0].jar.length != 0){
-      currentJarId = [userLogin[0].jar[0]];
-      fileManager.writeFileSync(currentJarIdPath, JSON.stringify(currentJarId));
+      currentJar = [userLogin[0].jar[0]];
+      fileManager.writeFileSync(currentJarPath, JSON.stringify(currentJar));
+   }
+   else if(memoryType){
+      userLogin[0].jar.forEach((jar)=>{
+         if(jar.jarId == currentJar[0].jarId){
+            currentJar = [jar];
+         }
+      })
+      fileManager.writeFileSync(currentJarPath, JSON.stringify(currentJar));
+   }
+   else{
+      currentJar = [userLogin[0].jar[userLogin[0].jar.length-1]];
+      fileManager.writeFileSync(currentJarPath, JSON.stringify(currentJar));
    }
 }
 
@@ -95,7 +107,7 @@ app.get("/user-loged", function(req, res){
 });
 
 app.get("/current-jar", function(req, res){
-   res.json(currentJarId);
+   res.json(currentJar);
 });
 
 app.get("/current-memory", function(req, res){
@@ -127,11 +139,6 @@ app.post("/new-jar", function(req, res){
    fileManager.writeFileSync(jarPath, JSON.stringify(jarList));
    
    userLog(formContent.userId);
-
-   currentJarId = [{
-      "currentJarId": formContent.jarId
-   }];
-   fileManager.writeFileSync(currentJarIdPath, JSON.stringify(currentJarId));
 });
 
 app.post("/new-memory", function(req, res){
@@ -141,7 +148,7 @@ app.post("/new-memory", function(req, res){
    memoryList.push(formContent);
    fileManager.writeFileSync(memoryPath, JSON.stringify(memoryList));
    
-   userLog(formContent.userId);
+   userLog(formContent.userId, false, true);
 });
 
 app.post("/user-setting", function(req, res){
@@ -160,11 +167,13 @@ app.post("/user-setting", function(req, res){
 
 app.post("/change-current-jar", function(req, res){
    const formContent = req.body;
-   
-   currentJarId = [{
-      "currentJarId": formContent.newCurrentJarId
-   }];
-   fileManager.writeFileSync(currentJarIdPath, JSON.stringify(currentJarId));
+   userLogin[0].jar.forEach((jar)=>{
+      if(jar.jarId == formContent.newCurrentJarId){
+         currentJar = [jar];
+         console.log(jar);
+      };
+   });
+   fileManager.writeFileSync(currentJarPath, JSON.stringify(currentJar));
 });
 
 app.post("/change-current-memory", function(req, res){

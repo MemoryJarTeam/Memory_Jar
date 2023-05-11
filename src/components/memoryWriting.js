@@ -31,8 +31,8 @@ class MemoryWritingClass extends React.Component {
             });
         fetch("http://localhost:5000/current-jar")
             .then((response) => response.json())
-            .then((currentJarId) => {
-                this.setState({ currentJarId: currentJarId[0].currentJarId });
+            .then((currentJar) => {
+                this.setState({ currentJarId: currentJar[0].jarId });
                 this.setState({ jarDataIsReturned: true });
             });
     }
