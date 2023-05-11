@@ -146,6 +146,18 @@ class MainPageClass extends React.Component{
       }
    }
 
+   DdayCalculate = () =>{
+      console.log(this.state.currentJarInfo.madeDate)
+   }
+
+   Dday = () =>{
+      return (
+         <span className='DDate' id='remainTime'>
+            <this.DdayCalculate />
+         </span>
+      )
+   }
+   
 
    render(){
       if(this.state.dataIsReturned){
@@ -172,7 +184,7 @@ class MainPageClass extends React.Component{
                               </div>
                               <div className='hoverDiv'>{this.state.currentJarInfo.memoryList.length} memories!</div>
                            </section>
-                           <p>D - <span className='DDate'>{this.state.currentJarInfo.date}</span></p>
+                           <p>Time Until Open<br/><this.Dday/></p>
                         </article>
                         <button onClick={this.handleNewMemory}>
                            <i className="fa-solid fa-plus"></i>

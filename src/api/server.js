@@ -45,6 +45,7 @@ function userLog(userId, login=false){
                   "userId": jar.userId,
                   "name": jar.name,
                   "date": jar.date,
+                  "madeDate": jar.madeDate,
                   "color": jar.color,
                   "memoryList": jarMemorys
                }
