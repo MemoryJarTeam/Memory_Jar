@@ -65,6 +65,26 @@ class MainPageClass extends React.Component{
       this.props.navigate(0);
    }
 
+   handleResult = ()=>{
+      let made = this.state.currentJarInfo.madeDate;
+      let now = new Date();
+      let madeArr = made.split('.')
+      let nowYear = now.getFullYear();   // 연도
+      let nowMonth = now.getMonth()+1;   // 월    
+      let nowDay = now.getDate();        // 일
+      let stDate = new Date(madeArr[0], madeArr[1], madeArr[2]);
+      let endDate = new Date(nowYear, nowMonth, nowDay);
+      
+      let btMs = endDate.getTime() - stDate.getTime() ;
+      let btDay =  btMs / (1000*60*60*24) ;
+      let dDate = this.state.currentJarInfo.date - btDay;
+      console.log(dDate)
+      if(dDate === 0){
+         this.props.navigate("/keyword");
+      }
+
+   }
+
    JarName = (props)=>{
       return(
          <li>
@@ -157,10 +177,9 @@ class MainPageClass extends React.Component{
       let btDay =  btMs / (1000*60*60*24) ;
       let dDate = this.state.currentJarInfo.date - btDay;
       
-      // console.log("오늘-만든날 차이는?? " + btDay);
-      console.log(`Made date? ${madeArr}`)
-      console.log(`How many days after? ${this.state.currentJarInfo.date}`)
-      console.log(`how many days left? ${dDate}`);
+      // console.log(`Made date? ${madeArr}`)
+      // console.log(`How many days after? ${this.state.currentJarInfo.date}`)
+      // console.log(`how many days left? ${dDate}`);
       if (dDate !== 0) {
          return (
             <p>D - {dDate}</p>
@@ -168,8 +187,8 @@ class MainPageClass extends React.Component{
       } else {
          return (
             <>
-            <p>D-day</p>
-            <p>Click the Jar now!</p>
+               <p>D-day</p>
+               <p>Click the Jar now!</p>
             </>
          )
       }
@@ -202,7 +221,7 @@ class MainPageClass extends React.Component{
                   <main className="jarexist-main">
                         <p>{this.state.currentJarInfo.name}</p>
                         <article className='jarArticle'>
-                           <section className='jarGroup'>
+                           <section className='jarGroup' onClick={this.handleResult}>
                               <img src={jarCap} alt='cap' className='jarCap'/>
                               <div className='jarCapColor' style={{backgroundColor: this.state.currentJarInfo.color}}></div>
                               <div className='jarBottle'>
