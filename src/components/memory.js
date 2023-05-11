@@ -31,6 +31,10 @@ class MemoryClass extends React.Component{
       });
    };
 
+   handleBack = ()=> {
+      this.props.navigate(-1);
+   }
+
    handleChangeMemory = (props)=>{
       let newCurrentMemoryId = {
          "newCurrentMemoryId": parseInt(props.target.id)
@@ -85,7 +89,7 @@ class MemoryClass extends React.Component{
                   <img
                      src={iconArrowLeft}
                      alt="arrow-left-icon"
-                     // onClick={"a"}
+                     onClick={this.handleBack}
                   />
                </nav>
                <main className="memory-main">

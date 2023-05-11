@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
 import iconArrowLeft from "../image/icon/icon-arrow-left.svg";
 import heartRegular from "../image/icon/heart-regular.svg";
 import heartSolid from "../image/icon/heart-solid.svg";
