@@ -7,14 +7,16 @@ class MainPageClass extends React.Component{
    
    constructor(props){
       super(props)
+      this.ref = React.createRef();
       this.state = {
          dataIsReturned: false, 
          hasJars: false, 
          userInfo: [], 
-         currentJarInfo: []
+         currentJarInfo: [],
+         isActive : false,
       }
    }
-
+   
    componentDidMount(){
       fetch("http://localhost:5000/user-loged")
       .then((response)=>response.json())
@@ -79,8 +81,10 @@ class MainPageClass extends React.Component{
       let btDay =  btMs / (1000*60*60*24) ;
       let dDate = this.state.currentJarInfo.date - btDay;
       console.log(dDate)
-      if(dDate === 0){
+      if(dDate <= 0){
          this.props.navigate("/keyword");
+      } else {
+         alert('Not yet!')
       }
 
    }
@@ -163,7 +167,7 @@ class MainPageClass extends React.Component{
    }
 
    DdayCalculate = () =>{
-      console.log(this.state.currentJarInfo.madeDate)
+      // console.log(this.state.currentJarInfo.madeDate)
       let made = this.state.currentJarInfo.madeDate;
       let now = new Date();
       let madeArr = made.split('.')
@@ -176,20 +180,23 @@ class MainPageClass extends React.Component{
       let btMs = endDate.getTime() - stDate.getTime() ;
       let btDay =  btMs / (1000*60*60*24) ;
       let dDate = this.state.currentJarInfo.date - btDay;
-      
       // console.log(`Made date? ${madeArr}`)
       // console.log(`How many days after? ${this.state.currentJarInfo.date}`)
       // console.log(`how many days left? ${dDate}`);
-      if (dDate !== 0) {
-         return (
-            <p>D - {dDate}</p>
-         )
-      } else {
+      if (dDate <= 0) {
+         this.setState({ isActive: true });
+
          return (
             <>
-               <p>D-day</p>
-               <p>Click the Jar now!</p>
+               <span>You can open!<br/>
+               Click the Jar now!</span>
             </>
+         )
+      } else{
+         // console.log(this.ref.current)
+         
+         return (
+            <span>D - {dDate}</span>
          )
       }
 
@@ -202,7 +209,6 @@ class MainPageClass extends React.Component{
          </span>
       )
    }
-   
 
    render(){
       if(this.state.dataIsReturned){
@@ -231,7 +237,7 @@ class MainPageClass extends React.Component{
                            </section>
                            <p><this.Dday/></p>
                         </article>
-                        <button onClick={this.handleNewMemory}>
+                        <button onClick={this.handleNewMemory}  className={ this.state.isActive ? 'active' : 'notActive' } >
                            <i className="fa-solid fa-plus"></i>
                         </button>
                   </main> 
