@@ -40,7 +40,8 @@
         align-items: center;
         width: 40vh;
         height: 4vh;
-        background-color: ghostwhite;
+        /* background-color: ghostwhite; */
+        font-weight: 800;
     }
 
     .memory .memory-main aside {

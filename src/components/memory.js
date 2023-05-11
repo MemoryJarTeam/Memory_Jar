@@ -35,6 +35,14 @@ class MemoryClass extends React.Component{
       this.props.navigate(-1);
    }
 
+   handleMainPage = ()=>{
+      this.props.navigate("/main-page");
+   }
+
+   handleUser = ()=>{
+      this.props.navigate("/user-setting");
+   }
+
    handleChangeMemory = (props)=>{
       let newCurrentMemoryId = {
          "newCurrentMemoryId": parseInt(props.target.id)
@@ -107,7 +115,7 @@ class MemoryClass extends React.Component{
                         />
                      </section>
                      <aside>
-                           <small> {this.state.memoryInfo.keyWord} </small>
+                           <small style={{backgroundColor:this.state.memoryInfo.level}}> {this.state.memoryInfo.keyWord} </small>
                            <img src={memoryImg} alt="memory" />
                            <p>
                               {this.state.memoryInfo.text}
@@ -123,10 +131,10 @@ class MemoryClass extends React.Component{
                <footer>
                   <section>
                      <button className="icon">
-                           <i className="fa-solid fa-house-chimney"></i>
+                           <i className="fa-solid fa-house-chimney"  onClick={this.handleMainPage}></i>
                      </button>
                      <button className="icon">
-                           <i className="fa-solid fa-user"></i>
+                           <i className="fa-solid fa-user" onClick={this.handleUser}></i>
                      </button>
                   </section>
                </footer>
