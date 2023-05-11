@@ -64,6 +64,9 @@
         text-align: center;
         top: 565px;
         font-size: 18px;
+        display: flex;
+        justify-content: center;
+        column-gap: 0.5vw;
     }
 
     .jarexist-main button {
@@ -84,6 +87,9 @@
     .DDate {
         color: rgb(255, 102, 46);
         font-weight: 800;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1vh;
     }
     .jarBottle > article {
         position: relative;

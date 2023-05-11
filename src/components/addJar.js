@@ -37,19 +37,19 @@ class AddJarClass extends React.Component{
 
    handleSubmit = (event) =>{
       event.preventDefault();
-      const newDate = new Date();
-      const madeDate =
-            newDate.getDate() +
-            "/" +
-            (newDate.getMonth() + 1) +
-            "/" +
-            newDate.getFullYear();
+      const newDate = new Date().toLocaleDateString();
+      // const madeDate =
+      //       newDate.getDate() +
+      //       "/" +
+      //       (newDate.getMonth() + 1) +
+      //       "/" +
+      //       newDate.getFullYear();
       let newJar = {
          "jarId": this.state.lastJarId+1,
          "userId": this.state.userInfo.id,
          "name": this.state.name,
          "date": this.state.date,
-         'madeDate': madeDate,
+         'madeDate': newDate,
          "color": this.state.color
       };
 

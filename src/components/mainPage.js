@@ -144,6 +144,36 @@ class MainPageClass extends React.Component{
 
    DdayCalculate = () =>{
       console.log(this.state.currentJarInfo.madeDate)
+      let made = this.state.currentJarInfo.madeDate;
+      let now = new Date();
+      let madeArr = made.split('.')
+      let nowYear = now.getFullYear();   // 연도
+      let nowMonth = now.getMonth()+1;   // 월    
+      let nowDay = now.getDate();        // 일
+      let stDate = new Date(madeArr[0], madeArr[1], madeArr[2]);
+      let endDate = new Date(nowYear, nowMonth, nowDay);
+      
+      let btMs = endDate.getTime() - stDate.getTime() ;
+      let btDay =  btMs / (1000*60*60*24) ;
+      let dDate = this.state.currentJarInfo.date - btDay;
+      
+      // console.log("오늘-만든날 차이는?? " + btDay);
+      console.log(`Made date? ${madeArr}`)
+      console.log(`How many days after? ${this.state.currentJarInfo.date}`)
+      console.log(`how many days left? ${dDate}`);
+      if (dDate !== 0) {
+         return (
+            <p>D - {dDate}</p>
+         )
+      } else {
+         return (
+            <>
+            <p>D-day</p>
+            <p>Click the Jar now!</p>
+            </>
+         )
+      }
+
    }
 
    Dday = () =>{
@@ -180,7 +210,7 @@ class MainPageClass extends React.Component{
                               </div>
                               <div className='hoverDiv'>{this.state.currentJarInfo.memoryList.length} memories!</div>
                            </section>
-                           <p>Time Until Open<br/><this.Dday/></p>
+                           <p><this.Dday/></p>
                         </article>
                         <button onClick={this.handleNewMemory}>
                            <i className="fa-solid fa-plus"></i>
