@@ -46,18 +46,18 @@ class MemoryWritingClass extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        const newDate = new Date();
-        const currentDate =
-            newDate.getDate() +
-            "/" +
-            (newDate.getMonth() + 1) +
-            "/" +
-            newDate.getFullYear();
+        const newDate = new Date().toLocaleDateString();
+        // const currentDate =
+        //     newDate.getDate() +
+        //     "/" +
+        //     (newDate.getMonth() + 1) +
+        //     "/" +
+        //     newDate.getFullYear();
         let newMemory = {
             memoryId: this.state.lastMemoryId + 1,
             jarId: this.state.currentJarId,
             userId: this.state.userInfo.id,
-            date: currentDate,
+            date: newDate,
             keyWord: this.state.keyWord,
             level: this.state.level,
             text: this.state.text,

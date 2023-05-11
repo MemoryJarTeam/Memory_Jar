@@ -83,6 +83,7 @@ class MemoryClass extends React.Component{
 
    render(){
       if(this.state.dataIsReturned){
+         console.log(this.state.memoryInfo)
          return(
             <section className="memory">
                <nav className="backBtn">
@@ -112,11 +113,11 @@ class MemoryClass extends React.Component{
                               {this.state.memoryInfo.text}
                            </p>
                      </aside>
-                     <span
+                     {/* <span
                            >by.
                            <img src={profile} alt="profile" />
                            Day
-                     </span>
+                     </span> */}
                   </article>
                </main>
                <footer>
